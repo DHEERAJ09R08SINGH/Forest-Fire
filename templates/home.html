@@ -4,7 +4,7 @@
         <h1>FWI Prediction</h1>
 
         <!--Main Input For Receiving Query to our ML-->
-        <form action="{{url_for('predictdata')}}" method="post">
+        <form action="{{url_for('predict_datapoint')}}" method="post">
             <input type="text" name="Temperature" placeholder="Temperature" required="required" /><br>
             <input type="text" name="RH" placeholder="RH" required="required" /><br>
             <input type="text" name="Ws" placeholder="Ws" required="required" /><br>
