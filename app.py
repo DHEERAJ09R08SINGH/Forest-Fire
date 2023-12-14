@@ -7,6 +7,7 @@ import secrets
 
 app = Flask(__name__)
 
+
 #Generate a secure random key
 secret_key = secrets.token_hex(16)
 app.secret_key = secret_key
