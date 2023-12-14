@@ -3,8 +3,14 @@ from flask import Flask,request,jsonify,render_template
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
+import secrets
 
 app = Flask(__name__)
+
+#Generate a secure random key
+secret_key = secrets.token_hex(16)
+app.secret_key = secret_key
+
 
 
 ## import ridge regressor model and standard scaler pickle
