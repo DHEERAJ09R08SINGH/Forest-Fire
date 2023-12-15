@@ -23,7 +23,7 @@ standard_scaler=pickle.load(open('models/scaler.pkl','rb'))
 def index():
     return render_template('index.html')
 
-@app.route('/predictdata',methods=['GET','POST'])
+@app.route('/predict_datapoint',methods=['GET','POST'])
 def predict_datapoint():
     if request.method=='POST':
         Temperature=float(request.form.get('Temperature'))
@@ -39,10 +39,10 @@ def predict_datapoint():
         new_data_scaled=standard_scaler.transform([[Temperature,RH,Ws,Rain,FFMC,DMC,ISI,Classes,Region]])
         result=ridge_model.predict(new_data_scaled)
 
-        return render_template('home.html',result=result[0])
+        return render_template('index.html',result=result[0])
 
     else:
-        return render_template("home.html")
+        return render_template("index.html")
 
 
 
